@@ -1,5 +1,3 @@
-var version = 1.16;
-
 function realizandocurso() {
   var h2 = realizando.insertAdjacentElement(
     "beforeend",
@@ -41,7 +39,7 @@ function btnarriba(contenedor){
 }
 
 function info() {
-  jQuery.get("http://localhost/ruta/cursos.json?v=1.17", function (data) {
+  jQuery.get("http://localhost/ruta/cursos.json", function (data) {
     $.each(data, function (key, value) {
       if (key != "1" && key != "2") {
         var main = document.querySelector("#main");
