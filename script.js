@@ -39,7 +39,7 @@ function btnarriba(contenedor){
 }
 
 function info() {
-  jQuery.get("http://localhost/ruta/cursos.json", function (data) {
+  jQuery.get("https://carlosiriarteconsuegra.github.io/rutaaprendizaje.github.io/cursos.json", function (data) {
     $.each(data, function (key, value) {
       if (key != "1" && key != "2") {
         var main = document.querySelector("#main");
