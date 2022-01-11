@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav {
+    margin: 5px;
+    padding: 5px;
+}
+
+header > nav > ul > li {
+    list-style: none;
+    display: inline-block;
+    margin: 2px 5px;
+}
+
+header > nav > ul > li > a {
+    border: 2px solid rgb(0, 17, 61);
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(0, 17, 61);
+}
+
+header > nav > ul > li > a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 17, 61);
+    text-decoration: underline;
+}
+
+main {
+    margin: 5px 10px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    margin: 20px 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#realizando > em {
+    display: inline;
+}
+#realizando > h2 {
+    display: inline-block;
+}
+
+main > section > ol > li{
+    margin: 10px 50px;
+}
+
+main > section > ol > li > a {
+    text-decoration: none;
+    color: rgb(0, 17, 61);
+}
+
+main > section > ol > li > a:hover {
+    text-decoration: underline;
+}
+
+.arriba {
+    background-color: rgb(0, 255, 221);
+    color: rgb(0, 17, 61);
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.arriba:hover {
+    text-decoration: underline;
+    background-color: rgb(0, 17, 61);
+    color: rgb(0, 255, 221);
+}
+
+.opcional {
+    background-color: rgb(255, 92, 92);
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.platzi {
+    background-color: rgb(126, 255, 40);
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.edteam {
+    background-color: rgb(117, 161, 255);
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.udemy {
+    background-color: rgb(186, 117, 255);
+    padding: 2px;
+    border-radius: 3px;
+}
+
+#sinlink {
+    background-color: rgb(255, 92, 92);
+    padding: 2px;
+}
