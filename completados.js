@@ -19,7 +19,7 @@ function btnarriba(contenedor){
     a.textContent = "Volver Arriba";
 }
 
-function agregaropnav(nav,key,value){
+function agregaropnav(nav){
   var a = document.createElement("a");
   a.href = "#" + key;
   a.textContent = value.nombre;
@@ -37,7 +37,7 @@ function info() {
 
         for (z of value.cursos) {
           if (z.realizado == "si") {
-            agregaropnav(nav,key,value);
+            agregaropnav(nav);
             var section = document.createElement("section");
             section.id = key;
             completados.insertAdjacentElement("beforeend", section);
@@ -51,10 +51,6 @@ function info() {
             );
             
             var completados = document.querySelector("#completados");
-            var ol = completados.insertAdjacentElement(
-              "beforeend",
-              document.createElement("ol")
-            );
             var li = ol.insertAdjacentElement(
               "beforeend",
               document.createElement("li")
@@ -63,7 +59,7 @@ function info() {
               "beforeend",
               document.createElement("del")
             );
-            var a = li.insertAdjacentElement(
+            var a = del.insertAdjacentElement(
               "beforeend",
               document.createElement("a")
             );
