@@ -19,39 +19,37 @@ function btnarriba(contenedor){
     a.textContent = "Volver Arriba";
 }
 
+function agregaropnav(nav){
+  var a = document.createElement("a");
+  a.href = "#" + key;
+  a.textContent = value.nombre;
+  li = nav.insertAdjacentElement("beforeend", document.createElement("li"));
+  li.insertAdjacentElement("beforeend", a);
+}
+
 function info() {
   jQuery.get("https://carlosiriarteconsuegra.github.io/rutaaprendizaje.github.io/cursos.json", function (data) {
     $.each(data, function (key, value) {
       if (key != "1" && key != "2") {
         var main = document.querySelector("#main");
         var nav = document.querySelector("#nav");
-
-        var a = document.createElement("a");
-        a.href = "#" + key;
-        a.textContent = value.nombre;
-        li = nav.insertAdjacentElement(
-          "beforeend",
-          document.createElement("li")
-        );
-        li.insertAdjacentElement("beforeend", a);
-
-        var section = document.createElement("section");
-        section.id = key;
-        main.insertAdjacentElement("beforeend", section);
-        var h2 = document.createElement("h2");
-        h2.textContent = value.nombre;
-        section.insertAdjacentElement("beforeend", h2);
-        btnarriba(section);
-        var ol = section.insertAdjacentElement(
-          "beforeend",
-          document.createElement("ol")
-        );
+        var completados = document.querySelector("#completados");
 
         for (z of value.cursos) {
-          if (z.realizado == "realizando") {
-            realizandocurso();
-          }
           if (z.realizado == "si") {
+            agregaropnav(nav);
+            var section = document.createElement("section");
+            section.id = key;
+            completados.insertAdjacentElement("beforeend", section);
+            var h2 = document.createElement("h2");
+            h2.textContent = value.nombre;
+            section.insertAdjacentElement("beforeend", h2);
+            btnarriba(section);
+            var ol = section.insertAdjacentElement(
+              "beforeend",
+              document.createElement("ol")
+            );
+            
             var completados = document.querySelector("#completados");
             var ol = completados.insertAdjacentElement(
               "beforeend",
