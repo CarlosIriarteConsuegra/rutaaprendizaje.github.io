@@ -71,10 +71,7 @@ function info() {
             a.target = "_BLANK";
             a.textContent = z.nombre + "   ";
             cursosinlink(z.src,a);
-            var a = del.insertAdjacentElement(
-              "beforeend",
-              document.createElement("span")
-            );
+            var span = del.insertAdjacentElement("beforeend",document.createElement("span"));
             span.className = z.clase;
             span.textContent = z.escuela;
           }
