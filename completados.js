@@ -19,7 +19,7 @@ function btnarriba(contenedor){
     a.textContent = "Volver Arriba";
 }
 
-function agregaropnav(nav){
+function agregaropnav(nav,key,value){
   var a = document.createElement("a");
   a.href = "#" + key;
   a.textContent = value.nombre;
@@ -36,7 +36,7 @@ function info() {
 
         for (z of value.cursos) {
           if (z.realizado == "si") {
-            agregaropnav(nav);
+            agregaropnav(nav,key,value);
             var section = document.createElement("section"); 
             section.id = key;
             var section = completados.insertAdjacentElement("beforeend", section);
