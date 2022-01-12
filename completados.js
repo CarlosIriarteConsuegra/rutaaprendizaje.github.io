@@ -19,7 +19,7 @@ function btnarriba(contenedor){
     a.textContent = "Volver Arriba";
 }
 
-function agregaropnav(nav){
+function agregaropnav(nav,key,value){
   var a = document.createElement("a");
   a.href = "#" + key;
   a.textContent = value.nombre;
