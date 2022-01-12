@@ -37,7 +37,7 @@ function info() {
 
         for (z of value.cursos) {
           if (z.realizado == "si") {
-            agregaropnav(nav);
+            agregaropnav(nav,key,value);
             var section = document.createElement("section");
             section.id = key;
             completados.insertAdjacentElement("beforeend", section);
