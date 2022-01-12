@@ -32,14 +32,14 @@ function info() {
     $.each(data, function (key, value) {
       if (key != "1" && key != "2") {
         var nav = document.querySelector("#nav");
-        var completados = document.querySelector("#completados");
+        var main = document.querySelector("#main");
 
         for (z of value.cursos) {
           if (z.realizado == "si") {
             agregaropnav(nav,key,value);
             var section = document.createElement("section"); 
             section.id = key;
-            var section = completados.insertAdjacentElement("beforeend", section);
+            var section = main.insertAdjacentElement("beforeend", section);
 
             var h2 = document.createElement("h2");
             h2.textContent = value.nombre;
