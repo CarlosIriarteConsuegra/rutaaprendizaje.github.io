@@ -4927,18 +4927,18 @@
         "nombre": "Habilidades Blandas",
         "cursos": [
             {
-                "nombre": "Curso de Estrategias para Aprender en Linea",
+                "nombre": "Curso de Estrategias para Aprender en Linea Efectivamente",
                 "clase": "platzi",
                 "escuela": "Platzi - Escuela de Habilidades Blandas",
                 "src": "https://t.me/c/1591581605/1154",
-                "realizado": "realizando"
+                "realizado": "si"
             },
             {
                 "nombre": "Curso de Gestion Efectiva del Tiempo",
                 "clase": "platzi",
                 "escuela": "Platzi - Escuela de Habilidades Blandas",
                 "src": "https://t.me/c/1591581605/1155",
-                "realizado": "no"
+                "realizado": "realizando"
             },
             {
                 "nombre": "Curso para Crear Habitos Positivos",
