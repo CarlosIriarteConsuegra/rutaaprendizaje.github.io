@@ -41,11 +41,11 @@ function info() {
         h2.textContent = value.nombre;
         section.insertAdjacentElement("beforeend", h2);
         btnarriba(section);
+        var ol = section.insertAdjacentElement("beforeend", document.createElement("ol"));
         var si = 0;
         for (z of value.cursos) {
           if (z.realizado == "si") {
             var si = 1;
-            var ol = section.insertAdjacentElement("beforeend", document.createElement("ol"));
             var li = ol.insertAdjacentElement("beforeend", document.createElement("li"));
             var del = li.insertAdjacentElement("beforeend", document.createElement("del"));
 
