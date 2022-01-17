@@ -33,19 +33,18 @@ function info() {
       if (key != "1" && key != "2") {
         var nav = document.querySelector("#nav");
         var main = document.querySelector("#main");
+        
+        var section = document.createElement("section"); 
+        section.id = key;
 
+        var h2 = document.createElement("h2");
+        h2.textContent = value.nombre;
+        section.insertAdjacentElement("beforeend", h2);
+        btnarriba(section);
+        var si = 0;
         for (z of value.cursos) {
           if (z.realizado == "si") {
-            agregaropnav(nav,key,value);
-            var section = document.createElement("section"); 
-            section.id = key;
-            var section = main.insertAdjacentElement("beforeend", section);
-
-            var h2 = document.createElement("h2");
-            h2.textContent = value.nombre;
-            section.insertAdjacentElement("beforeend", h2);
-            btnarriba(section);
-
+            var si = 1;
             var ol = section.insertAdjacentElement("beforeend", document.createElement("ol"));
             var li = ol.insertAdjacentElement("beforeend", document.createElement("li"));
             var del = li.insertAdjacentElement("beforeend", document.createElement("del"));
@@ -60,6 +59,10 @@ function info() {
             span.className = z.clase;
             span.textContent = z.escuela;
           }
+        }
+        if (si == 1){
+          agregaropnav(nav,key,value);
+          var section = main.insertAdjacentElement("beforeend", section);
         }
       }
     });
