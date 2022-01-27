@@ -39,6 +39,7 @@ function btnarriba(contenedor){
 }
 
 function info() {
+  var cant = 0;
   jQuery.get("https://carlosiriarteconsuegra.github.io/rutaaprendizaje.github.io/cursos.json", function (data) {
     $.each(data, function (key, value) {
       if (key != "1" && key != "2") {
@@ -67,6 +68,7 @@ function info() {
         );
 
         for (z of value.cursos) {
+          var cant += 1;
           if (z.realizado == "realizando") {
             realizandocurso();
           }
@@ -92,6 +94,11 @@ function info() {
           }
         }
       }
+      var canttag = main.insertAdjacentElement(
+              "beforeend",
+              document.createElement("span")
+            );
+      canttag.textContent = cant;
     });
   });
 }
