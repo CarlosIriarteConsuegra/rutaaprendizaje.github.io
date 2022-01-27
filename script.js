@@ -121,7 +121,6 @@ function info() {
 
     var cantSinLinktag = main.insertAdjacentElement("beforeend", document.createElement("span"));
     cantSinLinktag.textContent = "Cantidad Cursos Sin Link " + cantSinLink;
-    main.insertAdjacentElement("beforeend", document.createElement("br"));
   });
   
 }
