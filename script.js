@@ -18,6 +18,7 @@ function realizandocurso() {
 }
 
 function cursosinlink(link,contenedor){
+  var cant = 0;
   if (link == ""){
     var span = contenedor.insertAdjacentElement(
       "beforeend",
@@ -25,7 +26,9 @@ function cursosinlink(link,contenedor){
     );
     span.id = "sinlink";
     span.textContent = "!SIN LINK¡";
+    var cant = 1;
   }
+  return cant
 }
 
 function btnarriba(contenedor){
@@ -40,6 +43,8 @@ function btnarriba(contenedor){
 
 function info() {
   var cant = 0;
+  var cantSinRealizar = 0;
+  var cantSinLink = 0;
   jQuery.get("https://carlosiriarteconsuegra.github.io/rutaaprendizaje.github.io/cursos.json", function (data) {
     $.each(data, function (key, value) {
       if (key != "1" && key != "2") {
@@ -68,11 +73,12 @@ function info() {
         );
 
         for (z of value.cursos) {
-          var cant += 1;
+          cant += 1;
           if (z.realizado == "realizando") {
             realizandocurso();
           }
           if (z.realizado == "no" || z.realizado == undefined || z.realizado == "realizando") {
+            cantSinRealizar += 1;
             var li = ol.insertAdjacentElement(
               "beforeend",
               document.createElement("li")
@@ -84,7 +90,7 @@ function info() {
             a.href = z.src;
             a.target = "_BLANK";
             a.textContent = z.nombre + "   ";
-            cursosinlink(z.src,a);
+            cantSinLink += cursosinlink(z.src,a);
             var span = a.insertAdjacentElement(
               "beforeend",
               document.createElement("span")
@@ -94,13 +100,30 @@ function info() {
           }
         }
       }
-      var canttag = main.insertAdjacentElement(
-              "beforeend",
-              document.createElement("span")
-            );
-      canttag.textContent = cant;
     });
+    var canttag = main.insertAdjacentElement("beforeend", document.createElement("span"));
+    canttag.textContent = "Cantidad Total Cursos " + cant;
+    main.insertAdjacentElement("beforeend", document.createElement("br"));
+    main.insertAdjacentElement("beforeend", document.createElement("br"));
+
+    var cantRealizadostag = main.insertAdjacentElement("beforeend", document.createElement("span"));
+    cantRealizadostag.textContent = "Cantidad Cursos Realizados " + (cant - cantSinRealizar);
+    main.insertAdjacentElement("beforeend", document.createElement("br"));
+
+    var cantSinRealizartag = main.insertAdjacentElement("beforeend", document.createElement("span"));
+    cantSinRealizartag.textContent = "Cantidad Cursos Sin Realizar " + cantSinRealizar;
+    main.insertAdjacentElement("beforeend", document.createElement("br"));
+    main.insertAdjacentElement("beforeend", document.createElement("br"));
+
+    var cantSinLinktag = main.insertAdjacentElement("beforeend", document.createElement("span"));
+    cantSinLinktag.textContent = "Cantidad Cursos Con Link " + (cant - cantSinLink);
+    main.insertAdjacentElement("beforeend", document.createElement("br"));
+
+    var cantSinLinktag = main.insertAdjacentElement("beforeend", document.createElement("span"));
+    cantSinLinktag.textContent = "Cantidad Cursos Sin Link " + cantSinLink;
+    main.insertAdjacentElement("beforeend", document.createElement("br"));
   });
+  
 }
 
 info();
